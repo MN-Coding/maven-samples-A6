@@ -19,4 +19,18 @@ pipeline {
     }
 
   }
+post {
+        failure {
+            script {
+                try {
+                    sh 'git checkout -'
+                } catch (Exception e) {
+                    echo "Failed to uncheckout the branch: ${e.message}"
+                } finally {
+                    // Optional: Add any cleanup steps here
+                }
+            }
+        }
+    }
+  
 }
