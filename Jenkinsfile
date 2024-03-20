@@ -13,7 +13,7 @@ pipeline {
 
     stage('run') {
       steps {
-        sh 'git bisect start 198644632661c67b6c32f59e9047c11a70685e15 98ac319c0cff47b4d39a1a7b61b4e195cfa231e5'
+        sh 'git bisect start aa3ab90d6cd0bc0a3f17f9412c729889be3a0339 c694c1f295dec4c158d28b0b87d218e24f244f9f'
         sh 'git bisect run mvn clean test'
       }
     }
